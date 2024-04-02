@@ -3,9 +3,11 @@ from tensorflow import keras
 from keras.models import Model
 from keras.layers import Embedding, Dense, Input
 from keras.layers import LSTM
+
 from keras.callbacks import ModelCheckpoint
 import numpy as np
-from keras.preprocessing.sequence import pad_sequences
+from keras_preprocessing.sequence import pad_sequences
+
 
 import os
 

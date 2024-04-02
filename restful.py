@@ -28,12 +28,12 @@ def process_json():
         # Adjust this line
         config = np.load(Seq2SeqSummarizer.get_config_file_path(model_dir_path=model_dir_path), allow_pickle=True).item()
 
-        # summarizer = Seq2SeqSummarizer(config)
-        # summarizer.load_weights(weight_file_path=Seq2SeqSummarizer.get_weight_file_path(model_dir_path=model_dir_path))
+        summarizer = Seq2SeqSummarizer(config)
+        summarizer.load_weights(weight_file_path=Seq2SeqSummarizer.get_weight_file_path(model_dir_path=model_dir_path))
 
-        # result = summarizer.summarize(content)
+        result = summarizer.summarize(content)
         # Return the count as JSON response
-        response = {'count': content}
+        response = {'count': result}
         return jsonify(response), 200
     else:
         # Return an error if JSON data is not provided or does not contain 'content' key
