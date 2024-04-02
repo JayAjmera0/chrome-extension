@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Scrape Popup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #333;
+        }
+        #scrapeButton {
+            background-color: #008CBA; /* Blue */
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #scrapeButton:hover {
+            background-color: #007B9A;
+        }
+        #countDisplay {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Scrape Popup</h1>
+    <p id="countDisplay">Word Count: <span id="countValue">0</span></p>
+    <button id="scrapeButton">Scrape Emails</button>
+    <script src="popup.js"></script>
+</body>
+</html>
