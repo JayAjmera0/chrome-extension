@@ -31,12 +31,28 @@
             font-size: 18px;
             margin-top: 20px;
         }
+        #loadingSpinner {
+            display: none;
+            margin-top: 20px;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
     <h1>Email Scrape Popup</h1>
-    <p id="countDisplay">Word Count: <span id="countValue">0</span></p>
+    <p id="countDisplay"><span id="countValue"></span></p>
     <button id="scrapeButton">Scrape Emails</button>
+    <div id="loadingSpinner"></div>
     <script src="popup.js"></script>
 </body>
 </html>

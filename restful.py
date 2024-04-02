@@ -1,6 +1,8 @@
 from __future__ import print_function
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from gradio_client import Client
+
 
 
 import pandas as pd
@@ -26,12 +28,16 @@ def process_json():
         model_dir_path = './'
 
         # Adjust this line
-        config = np.load(Seq2SeqSummarizer.get_config_file_path(model_dir_path=model_dir_path), allow_pickle=True).item()
+        # config = np.load(Seq2SeqSummarizer.get_config_file_path(model_dir_path=model_dir_path), allow_pickle=True).item()
 
-        summarizer = Seq2SeqSummarizer(config)
-        summarizer.load_weights(weight_file_path=Seq2SeqSummarizer.get_weight_file_path(model_dir_path=model_dir_path))
+        # summarizer = Seq2SeqSummarizer(config)
+        # summarizer.load_weights(weight_file_path=Seq2SeqSummarizer.get_weight_file_path(model_dir_path=model_dir_path))
 
-        result = summarizer.summarize(content)
+        # result = summarizer.summarize(content)
+        client = Client("TekamBrice/text-summarizatiom")
+        result = client.predict(
+		content,	# str  in 'text' Textbox component
+		api_name="/predict")
         # Return the count as JSON response
         response = {'count': result}
         return jsonify(response), 200
