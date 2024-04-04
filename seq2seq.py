@@ -1,12 +1,11 @@
 from __future__ import print_function
-from tensorflow import keras
-from keras.models import Model
-from keras.layers import Embedding, Dense, Input
-from keras.layers import LSTM
-
-from keras.callbacks import ModelCheckpoint
 import numpy as np
-from keras_preprocessing.sequence import pad_sequences
+import os
+from tensorflow import keras
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Embedding, Dense, Input, LSTM
+from tensorflow.keras.callbacks import ModelCheckpoint
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 import os

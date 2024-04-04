@@ -28,16 +28,13 @@ def process_json():
         model_dir_path = './'
 
         # Adjust this line
-        # config = np.load(Seq2SeqSummarizer.get_config_file_path(model_dir_path=model_dir_path), allow_pickle=True).item()
+        config = np.load(Seq2SeqSummarizer.get_config_file_path(model_dir_path=model_dir_path), allow_pickle=True).item()
 
-        # summarizer = Seq2SeqSummarizer(config)
-        # summarizer.load_weights(weight_file_path=Seq2SeqSummarizer.get_weight_file_path(model_dir_path=model_dir_path))
+        summarizer = Seq2SeqSummarizer(config)
+        summarizer.load_weights(weight_file_path=Seq2SeqSummarizer.get_weight_file_path(model_dir_path=model_dir_path))
 
-        # result = summarizer.summarize(content)
-        client = Client("TekamBrice/text-summarizatiom")
-        result = client.predict(
-		content,	# str  in 'text' Textbox component
-		api_name="/predict")
+        result = summarizer.summarize(content)
+        
         # Return the count as JSON response
         response = {'count': result}
         return jsonify(response), 200
