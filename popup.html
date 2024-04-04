@@ -15,7 +15,7 @@
         h1 {
             color: #333;
         }
-        #scrapeButton {
+        #scrapeButton, #bertButton {
             background-color: #008CBA; /* Blue */
             color: white;
             padding: 10px 20px;
@@ -24,7 +24,7 @@
             cursor: pointer;
             font-size: 16px;
         }
-        #scrapeButton:hover {
+        #scrapeButton:hover, #bertButton:hover {
             background-color: #007B9A;
         }
         #countDisplay {
@@ -52,6 +52,7 @@
     <h1>Email Scrape Popup</h1>
     <p id="countDisplay"><span id="countValue"></span></p>
     <button id="scrapeButton">Scrape Emails</button>
+    <button id="bertButton">BERT Summarization</button>
     <div id="loadingSpinner"></div>
     <script src="popup.js"></script>
 </body>
