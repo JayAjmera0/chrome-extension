@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Scrape Popup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #333;
+        }
+        #scrapeButton, #bertButton {
+            background-color: #008CBA; /* Blue */
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #scrapeButton:hover, #bertButton:hover {
+            background-color: #007B9A;
+        }
+        #countDisplay {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        #loadingSpinner {
+            display: none;
+            margin-top: 20px;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Scrape Popup</h1>
+    <p id="countDisplay"><span id="countValue"></span></p>
+    <button id="scrapeButton">Scrape Emails</button>
+    <button id="bertButton">BART Summarization</button>
+    <div id="loadingSpinner"></div>
+    <script src="popup.js"></script>
+</body>
+</html>
